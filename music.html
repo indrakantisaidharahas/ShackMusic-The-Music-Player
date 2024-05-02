@@ -1,0 +1,320 @@
+<html>
+    <style>
+        .scrbr{
+            margin:50px;
+          overflow:scroll;
+          height:300px;
+          padding:20px;
+          background-color: gray;
+          color:black;
+          border-radius: 25px;
+        }
+        .worthy{
+            color:white;
+        }
+        body{
+            background-color:black;
+        }
+        .menu {
+            position: sticky;
+             top: 0;
+            background-color:rgb(57, 208, 57); 
+            padding: 25px 25px 25px 320px;
+            color: white;
+            overflow: hidden;
+        }
+        .bar{
+            background-color: rgba(128,128,128,0.5);
+            border-radius: 25px;
+            padding: 5px 0px 5px 5px;
+            width:640px;
+        }
+        li{
+            color:white;
+        }
+        td{
+            vertical-align: center;
+            text-align: center;
+            border:2px;
+        }
+        table,th{
+            border:5px;
+            width:50%
+        }
+        .worthy:hover {
+   animation-name: "key_frame_name";
+   animation-duration: 2s;
+   animation-iteration-count:"infinite";
+}
+@keyframes key_frame_name {
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+      transform: rotate(90deg);
+   }
+}
+        .e{
+            color:white;
+        }
+        .new{
+            position:absolute;
+            color: antiquewhite;
+        }
+        .about{
+            color:white;
+        }
+    </style>
+    <body >
+       <!-- <marquee
+  direction="left">
+  <img src="C:\Users\isaid\Pictures\welban.jpg">
+</marquee>-->
+ <div class="menu">
+    <div class="bar">
+   <label>
+    search
+   </label>
+   <input type="text" id="store">
+   <input type="submit" id="stor2">
+    </div>
+ </div>
+ <div style="margin: 50px;margin-bottom:10px;">
+       <div class="new">
+          Artist :AR Rahman<br>
+          33,167,507 monthly listeners
+       </div>
+       <img src="C:\Users\isaid\Downloads\ar.jpg">
+ </div>
+ <div class="about">
+    Renowned Awards:Padma Shri,Padma Bhushan,Grammy Award<br>
+
+ </div>
+        <ol class="scrbr" >
+            <div class="e" >
+                <div class="worthy"><img src=C:\Users\isaid\Pictures\pbb2.jpg></div>
+               click on the play button to play this playlist(since according to chrome rules autoplay is enabled only by click!)
+                 </div>
+           <table>
+            <tr>
+                <td >
+                    song
+                </th>
+                <th>
+                    name
+                </th>
+                <th>
+                    duration
+                </th>
+            </tr>
+             <tr><td><li>
+           <audio controls autoplay class="s1">
+                <source src="C:\Users\isaid\Downloads\khaleja_bgm.mp3" type="">
+            </audio>
+            <br>
+            </li></td>
+            <td class="m">
+                music1
+            </td>
+            <td>
+                27seconds
+            </td>
+             </tr>
+             <tr><td><li>
+                <audio controls autoplay  class="s2">
+                     <source src="C:\Users\isaid\Downloads\khaleja_bgm.mp3" type="">
+                 </audio>
+                 <br>
+                 </li></td>
+                 <td class="m">
+                     music2
+                 </td> <td>
+                    27seconds
+                </td>
+                  </tr>
+                  <tr><td><li>
+                    <audio controls autoplay class="s3">
+                         <source src="C:\Users\isaid\Downloads\khaleja_bgm.mp3" type="">
+                     </audio>
+                     <br>
+                     </li></td>
+                     <td class="m">
+                         music3
+                     </td> <td>
+                        27seconds
+                    </td>
+                      </tr> <tr><td><li>
+                        <audio controls autoplay class="s4">
+                             <source src="C:\Users\isaid\Downloads\khaleja_bgm.mp3" type="">
+                         </audio>
+                         <br>
+                         </li></td>
+                         <td class="m">
+                             music4
+                         </td> <td>
+                            27seconds
+                        </td>
+                          </tr> <tr><td><li>
+                            <audio controls autoplay  class="s5">
+                                 <source src="C:\Users\isaid\Downloads\khaleja_bgm.mp3" type="">
+                             </audio>
+                             <br>
+                             </li></td>
+                             <td class="m">
+                                 music5
+                             </td> <td>
+                                27seconds
+                            </td>
+                              </tr>
+                              <tr><td><li>
+                                <audio controls autoplay class="s6">
+                                     <source src="C:\Users\isaid\Downloads\khaleja_bgm.mp3" type="">
+                                 </audio>
+                                 <br>
+                                 </li></td>
+                                 <td class="m">
+                                     music6
+                                 </td> <td>
+                                    27seconds
+                                </td>
+                                  </tr>
+                                  <tr><td><li>
+                                    <audio controls autoplay class="s7">
+                                         <source src="C:\Users\isaid\Downloads\khaleja_bgm.mp3" type="">
+                                     </audio>
+                                     <br>
+                                     </li></td>
+                                     <td class="m">
+                                         music7
+                                     </td> <td>
+                                        27seconds
+                                    </td>
+                                      </tr>
+           </table>                                                
+        </ol>
+        <script>
+
+  var x = document.querySelectorAll(".scrbr audio");
+   var y=document.querySelector(".worthy");
+   var num=0;
+   function playnext(x,num) {
+    if (num < x.length) {
+    x[num].play();
+    x[num].onended = function() {
+      playnext(x,num + 1); 
+    };
+  }
+}
+y.addEventListener("click", () => {
+    playnext(x,num);
+})
+
+;
+   /*var a=document.getElementById("stor2");
+    a.addEventListener("click",function(event){
+        event.preventDefault();
+        var b=document.getElementById("store").value;
+   /*if(y.value=="music"){
+    alert("it is available");
+   }
+   else{
+    alert("it is not available");
+   }
+   var c=document.querySelectorAll(".m");
+   var d=document.querySelectorAll("audio");
+    for(var i=0;i<c.length;i++) {
+        if(b===c[i].textContent){
+            var audioElement = document.querySelector(d[i]);
+            audioElement.play();
+    break;
+   }
+   else{
+   }
+    }
+
+    })*/
+   /* var a = document.getElementById("stor2");
+a.addEventListener("click", function(event) {
+    event.preventDefault();
+    var b = document.getElementById("store").value.trim(); 
+
+    if (b === "") {
+        alert("Please enter a search query.");
+        return;
+    }
+
+    var c = document.querySelectorAll(".m");
+    var d = document.querySelectorAll("audio");
+    
+    for (var i = 0; i < c.length; i++) {
+        if (b.toLowerCase() === c[i].textContent.toLowerCase()) { 
+            
+            d.forEach(function(audio) {
+                audio.pause();
+            });
+            d[i].play();
+            break;
+        }
+    }
+});*/
+var a = document.getElementById("stor2");
+a.addEventListener("click", function(event) {
+    event.preventDefault();
+    var searchTerm = document.getElementById("store").value.trim().toLowerCase(); 
+
+    if (searchTerm === "") {
+        alert("Please enter a search term.");
+        return;
+    }
+
+    console.log("Search Term:", searchTerm); 
+
+    var musicNames = document.querySelectorAll(".m");
+    var audioElements = document.querySelectorAll("audio");
+    var matchedIndex = -1; 
+
+    for (var i = 0; i < musicNames.length; i++) {
+        var musicName = musicNames[i].textContent.trim().toLowerCase(); 
+
+        console.log("Music Name:", musicName); 
+
+        if (musicName === searchTerm) {
+            matchedIndex = i; 
+            break; 
+        }
+    }
+    if (matchedIndex !== -1) {
+        audioElements.forEach(function(audio) {
+            audio.pause();
+        });
+        audioElements[matchedIndex].play();
+    } else {
+        alert("No matching music found.");
+    }
+});
+var musicNames = document.querySelectorAll(".m");
+    var audioElements = document.querySelectorAll("audio");
+   x.addEventListener("click",function(N){
+    audioElements.forEach(function(M) {
+        M.addEventListener("click",function(event) {
+        audioElements.forEach(function(audio) {
+            audio.pause();
+        });
+        M.play();
+    });})})
+   /* audioElements[1].addEventListener("click",function(event) {
+        audioElements.forEach(function(audio) {
+            audio.pause();
+        });
+        audioElements[1].play();
+    });
+     audioElements[2].addEventListener("click",function(event) {
+        audioElements.forEach(function(audio) {
+            audio.pause();
+        });
+        audioElements[2].play();
+    });*/
+
+  </script>
+    </body>
+</html>

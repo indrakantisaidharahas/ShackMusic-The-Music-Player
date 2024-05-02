@@ -1,0 +1,64 @@
+<html>
+  <style>
+    .box{
+      background-color: black;
+      color: white;
+      margin-left:550px;
+      margin-top:200px;
+      width:300px;
+      padding:30px;
+      padding-left:40px;
+      padding-right:20px;
+      border-radius:25px;
+    }
+    #id1{
+      margin-bottom:10px;
+    }
+    #id3{
+      margin-bottom:10px;
+    }
+    .headi{
+      margin-left:120px;
+    }
+  </style>
+    <body>
+      <div class="box">
+        <div class="headi">
+        LogIn
+        </div>
+        <form >
+          <label id="event">
+            name         :
+          </label>
+            <input type="text" id="id1"><br>
+          <label>emailid:</label>
+          <input type="text" id="id3">
+<br>
+<label>
+    Password:
+</label>
+<input type="text" id="id4">
+<input type="submit" id="id2">
+
+        </form>
+        </div>
+        <script>
+    var y=document.getElementById("id2");
+      y.addEventListener("click",function(event) {
+        event.preventDefault();
+
+        var x =document.getElementById("id1"),z;
+        var e=document.getElementById("id3");
+      z=x.value;
+      if(z==""||e.value=="") {
+        alert("enter the details");
+      }else {
+        alert("welocme"+" "+z);
+    }
+    x.value="";
+    e.value="";
+      });
+    
+        </script>
+    </body>
+</html>
